@@ -23,11 +23,11 @@ jobs:
         node-version: '14'
 
     - name: Install ESLint
-      run: npm install eslint --global
+      run: npm install eslint@7 --global  # Install ESLint version 7
 
     - name: Run JavaScript Linting
       run: |
-        eslint changes.html  # Run linting on your JavaScript code
+        eslint --parser-options '{"ecmaVersion": 2020}' changes.html  # Run linting on your JavaScript code with ECMAScript 2020
 
     - name: Run Unit Tests (if applicable)
       run: |
