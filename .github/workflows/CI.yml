@@ -31,7 +31,9 @@ jobs:
       run: npm install eslint #this has only run 
 
     - name: Run JavaScript Linting
-      run: eslint changes.html  # Run linting on your JavaScript code
+      run: |
+        npm install eslint
+        eslint changes.html  # Run linting on your JavaScript code
 
     - name: Run Unit Tests (if applicable)
       # Add steps to run unit tests here, if you have any
