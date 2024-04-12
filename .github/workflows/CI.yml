@@ -22,13 +22,11 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install ESLint
-      run: npm install eslint --global  # Install ESLint globally
+    - name: Install htmlhint
+      run: npm install htmlhint --global  # Install htmlhint globally
 
-    - name: Run JavaScript Linting
-      run: |
-        # Find JavaScript files recursively in the repository and lint them with ESLint
-        find . -type f -name "*.js" -exec eslint --parser-options '{"ecmaVersion": 2020}' {} +
+    - name: Run HTML Linting
+      run: htmlhint changes.html  # Run linting on your HTML code
 
     - name: Run Unit Tests (if applicable)
       run: |
