@@ -27,8 +27,8 @@ jobs:
 
     - name: Run JavaScript Linting
       run: |
-        # Find JavaScript files in the repository and lint them with ESLint
-        find . -name "*.js" -exec eslint --parser-options '{"ecmaVersion": 2020}' {} +
+        # Find JavaScript files recursively in the repository and lint them with ESLint
+        find . -type f -name "*.js" -exec eslint --parser-options '{"ecmaVersion": 2020}' {} +
 
     - name: Run Unit Tests (if applicable)
       run: |
