@@ -17,11 +17,6 @@ jobs:
     - name: Display HTML Structure
       run: type changes.html  # Display the content of the HTML file for verification (Windows equivalent of cat)
 
-    - name: Run HTML Validation
-      uses: https://github.com/Fayaz117/temp_conv/blob/main/changes.html@v1
-      with:
-        path: changes.html  # Path to your HTML file
-
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
