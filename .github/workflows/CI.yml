@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - new-branch
+
+jobs:
+  build:
+    runs-on: windows-latest  # Run on Windows environment
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Display HTML Structure
+      run: type changes.html  # Display the content of the HTML file for verification (Windows equivalent of cat)
+
+    - name: Run HTML Validation
+      uses: w3c/html-validator-action@v2
+      with:
+        path: changes.html  # Path to your HTML file
+
+    - name: Run JavaScript Linting
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - run: npm install -g eslint
+    - run: eslint changes.html  # Run linting on your JavaScript code
+
+    - name: Run Unit Tests (if applicable)
+      # Add steps to run unit tests here, if you have any
