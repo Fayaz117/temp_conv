@@ -18,7 +18,7 @@ jobs:
       run: type changes.html  # Display the content of the HTML file for verification (Windows equivalent of cat)
 
     - name: Run HTML Validation
-      uses: Fayaz117/temp-conv@v1
+      uses: w3c/html-validator-action@v2
       with:
         path: changes.html  # Path to your HTML file
 
