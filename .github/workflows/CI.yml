@@ -23,7 +23,7 @@ jobs:
         node-version: '14'
 
     - name: Install ESLint
-      run: npm install eslint
+      run: npm install eslint --global
 
     - name: Run JavaScript Linting
       run: |
