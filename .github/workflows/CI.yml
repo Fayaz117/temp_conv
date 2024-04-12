@@ -28,7 +28,7 @@ jobs:
         node-version: '14'
 
     - name: Install ESLint
-      run: npm install eslint
+      run: npm install eslint #this has only run 
 
     - name: Run JavaScript Linting
       run: eslint changes.html  # Run linting on your JavaScript code
